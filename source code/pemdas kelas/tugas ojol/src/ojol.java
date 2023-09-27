@@ -45,7 +45,7 @@ public class ojol {
         double gopayMobil1 = tarifMobil1 - (tarifMobil1 * 0.1);
         double gopayMobil2 = tarifMobil2 - (tarifMobil2 * 0.1);
         double gopayMobil3 = tarifMobil3 - (tarifMobil3 * 0.1);
-        double gopayMobil4 = tarifMobil4 - (jarak * 15000 * 0.1);
+        double gopayMobil4 = tarifMobil4 - (tarifMobil4 * 0.1);
 
         // potongan diskon ovo
         double ovoMobil1 = tarifMobil1 - (tarifMobil1 * 0.05);
@@ -82,7 +82,7 @@ public class ojol {
         if (kendaraan == 1 && payment == 1) {
             if (jarak == 0) {
                 System.out.println("Mohon masukkan jarak dengan benar");
-            } else if (payment >= 2) {
+            } else if (jarak >= 2) {
                 System.out.printf("tarif: Rp.%.0f", gopayMotor1);
             } else if (jarak >= 2 && jarak <= 5) {
                 System.out.printf("tarif: Rp.%.0f", gopayMotor2);
@@ -97,7 +97,7 @@ public class ojol {
         if (kendaraan == 1 && payment == 2) {
             if (jarak == 0) {
                 System.out.println("Mohon masukkan jarak dengan benar");
-            } else if (payment >= 2) {
+            } else if (jarak >= 2) {
                 System.out.printf("tarif: Rp.%.0f", ovoMotor1);
             } else if (jarak >= 2 && jarak <= 5) {
                 System.out.printf("tarif: Rp.%.0f", ovoMotor2);
@@ -112,7 +112,7 @@ public class ojol {
         if (kendaraan == 1 && payment == 3) {
             if (jarak == 0) {
                 System.out.println("Mohon masukkan jarak dengan benar");
-            } else if (payment >= 2) {
+            } else if (jarak >= 2) {
                 System.out.printf("tarif: Rp.%.0f", tarifMotor1);
             } else if (jarak >= 2 && jarak <= 5) {
                 System.out.printf("tarif: Rp.%.0f", tarifMotor2);
@@ -127,7 +127,7 @@ public class ojol {
         if (kendaraan == 1 && payment == 1) {
             if (jarak == 0) {
                 System.out.println("Mohon masukkan jarak dengan benar");
-            } else if (payment >= 2) {
+            } else if (jarak >= 2) {
                 System.out.printf("tarif: Rp.%.0f", gopayMobil1);
             } else if (jarak >= 2 && jarak <= 5) {
                 System.out.printf("tarif: Rp.%.0f", gopayMobil2);
@@ -141,7 +141,7 @@ public class ojol {
         if (kendaraan == 1 && payment == 2) {
             if (jarak == 0) {
                 System.out.println("Mohon masukkan jarak dengan benar");
-            } else if (payment >= 2) {
+            } else if (jarak >= 2) {
                 System.out.printf("tarif: Rp.%.0f", ovoMobil1);
             } else if (jarak >= 2 && jarak <= 5) {
                 System.out.printf("tarif: Rp.%.0f", ovoMobil2);
@@ -156,7 +156,7 @@ public class ojol {
         if (kendaraan == 1 && payment == 3) {
             if (jarak == 0) {
                 System.out.println("Mohon masukkan jarak dengan benar");
-            } else if (payment >= 2) {
+            } else if (jarak >= 2) {
                 System.out.printf("tarif: Rp.%.0f", tarifMobil1);
             } else if (jarak >= 2 && jarak <= 5) {
                 System.out.printf("tarif: Rp.%.0f", tarifMobil2);
