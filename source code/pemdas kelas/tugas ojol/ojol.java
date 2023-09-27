@@ -87,7 +87,7 @@ public class Ojol {
 
         // kondisi user motor, ovo
         if (kendaraan == 1 && payment == 2) {
-            if (kendaraan == 1 && jarak <= 2 && payment == 2) {
+            if (jarak <= 2) {
                 System.out.printf("tarif: Rp.%.0f", ovoMotor1);
             } else if (jarak >= 2 && jarak <= 5) {
                 System.out.printf("tarif: Rp.%.0f", ovoMotor2);
