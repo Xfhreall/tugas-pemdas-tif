@@ -1,3 +1,4 @@
+
 /**
  *
  * @author RisqiFahreal
@@ -71,13 +72,13 @@ public class Ojol {
 
         // kondisi user motor, gopay
         if (kendaraan == 1 && payment == 1) {
-            if (kendaraan == 1 && jarak <= 2 && payment == 1) {
+            if (jarak <= 2) {
                 System.out.printf("tarif: Rp.%.0f", gopayMotor1);
-            } else if (kendaraan == 1 && jarak >= 2 && jarak <= 5 && payment == 1) {
+            } else if (jarak >= 2 && jarak <= 5) {
                 System.out.printf("tarif: Rp.%.0f", gopayMotor2);
-            } else if (kendaraan == 1 && jarak >= 5 && jarak <= 10 && payment == 1) {
+            } else if (jarak >= 5 && jarak <= 10) {
                 System.out.printf("tarif: Rp.%.0f", gopayMotor3);
-            } else if (kendaraan == 1 && jarak >= 10 && payment == 1) {
+            } else if (jarak >= 10) {
                 System.out.printf("tarif: Rp.%.0f", gopayMotor4);
             } else {
                 System.out.println("Data Invalid");
@@ -88,11 +89,11 @@ public class Ojol {
         if (kendaraan == 1 && payment == 2) {
             if (kendaraan == 1 && jarak <= 2 && payment == 2) {
                 System.out.printf("tarif: Rp.%.0f", ovoMotor1);
-            } else if (kendaraan == 1 && jarak >= 2 && jarak <= 5 && payment == 2) {
+            } else if (jarak >= 2 && jarak <= 5) {
                 System.out.printf("tarif: Rp.%.0f", ovoMotor2);
-            } else if (kendaraan == 1 && jarak >= 5 && jarak <= 10 && payment == 2) {
+            } else if (jarak >= 5 && jarak <= 10) {
                 System.out.printf("tarif: Rp.%.0f", ovoMotor3);
-            } else if (kendaraan == 1 && jarak >= 10 && payment == 2) {
+            } else if (jarak >= 10) {
                 System.out.printf("tarif: Rp.%.0f", ovoMotor4);
             } else {
                 System.out.println("Data Invalid");
@@ -101,13 +102,13 @@ public class Ojol {
 
         // kondisi user motor, cash
         if (kendaraan == 1 && payment == 3) {
-            if (kendaraan == 1 && jarak <= 2 && payment == 3) {
+            if (jarak <= 2) {
                 System.out.printf("tarif: Rp.%.0f", cashMotor1);
-            } else if (kendaraan == 1 && jarak >= 2 && jarak <= 5 && payment == 3) {
+            } else if (jarak >= 2 && jarak <= 5) {
                 System.out.printf("tarif: Rp.%.0f", cashMotor2);
-            } else if (kendaraan == 1 && jarak >= 5 && jarak <= 10 && payment == 3) {
+            } else if (jarak >= 5 && jarak <= 10) {
                 System.out.printf("tarif: Rp.%.0f", cashMotor3);
-            } else if (kendaraan == 1 && jarak >= 10 && payment == 3) {
+            } else if (jarak >= 10) {
                 System.out.printf("tarif: Rp.%.0f", cashMotor4);
             } else {
                 System.out.println("Data Invalid");
@@ -116,13 +117,13 @@ public class Ojol {
 
         // kondisi user mobil, gopay
         if (kendaraan == 2 && payment == 1) {
-            if (kendaraan == 2 && jarak <= 2 && payment == 1) {
+            if (jarak <= 2) {
                 System.out.printf("tarif: Rp.%.0f", gopayMobil1);
-            } else if (kendaraan == 2 && jarak >= 2 && jarak <= 5 && payment == 1) {
+            } else if (jarak >= 2 && jarak <= 5) {
                 System.out.printf("tarif: Rp.%.0f", gopayMobil2);
-            } else if (kendaraan == 2 && jarak >= 5 && jarak <= 10 && payment == 1) {
+            } else if (jarak >= 5 && jarak <= 10) {
                 System.out.printf("tarif: Rp.%.0f", gopayMobil3);
-            } else if (kendaraan == 2 && jarak >= 10 && payment == 1) {
+            } else if (jarak >= 10) {
                 System.out.printf("tarif: Rp.%.0f", gopayMobil4);
             } else {
                 System.out.println("Data Invalid");
@@ -131,13 +132,13 @@ public class Ojol {
 
         // kondisi user mobil, ovo
         if (kendaraan == 2 && payment == 2) {
-            if (kendaraan == 2 && jarak <= 2 && payment == 2) {
+            if (jarak <= 2) {
                 System.out.printf("tarif: Rp.%.0f", ovoMobil1);
-            } else if (kendaraan == 2 && jarak >= 2 && jarak <= 5 && payment == 2) {
+            } else if (jarak >= 2 && jarak <= 5) {
                 System.out.printf("tarif: Rp.%.0f", ovoMobil2);
-            } else if (kendaraan == 2 && jarak >= 5 && jarak <= 10 && payment == 2) {
+            } else if (jarak >= 5 && jarak <= 10) {
                 System.out.printf("tarif: Rp.%.0f", ovoMobil3);
-            } else if (kendaraan == 2 && jarak >= 10 && payment == 2) {
+            } else if (jarak >= 10) {
                 System.out.printf("tarif: Rp.%.0f", ovoMobil4);
             } else {
                 System.out.println("Data Invalid");
@@ -146,13 +147,13 @@ public class Ojol {
 
         // kondisi user mobil,cash
         if (kendaraan == 2 && payment == 3) {
-            if (kendaraan == 2 && jarak <= 2 && payment == 3) {
+            if (jarak <= 2) {
                 System.out.printf("tarif: Rp.%.0f", cashMobil1);
-            } else if (kendaraan == 2 && jarak >= 2 && jarak <= 5 && payment == 3) {
+            } else if (jarak >= 2 && jarak <= 5) {
                 System.out.printf("tarif: Rp.%.0f", cashMobil2);
-            } else if (kendaraan == 2 && jarak >= 5 && jarak <= 10 && payment == 3) {
+            } else if (jarak >= 5 && jarak <= 10) {
                 System.out.printf("tarif: Rp.%.0f", cashMobil3);
-            } else if (kendaraan == 2 && jarak >= 10 && payment == 3) {
+            } else if (jarak >= 10) {
                 System.out.printf("tarif: Rp.%.0f", cashMobil4);
             } else {
                 System.out.println("Data Invalid");
