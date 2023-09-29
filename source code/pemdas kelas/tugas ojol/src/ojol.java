@@ -28,7 +28,7 @@ public class ojol {
         System.out.print("Silahkan pilih kendaraan\nketik 1 untuk motor\nketik 2 untuk mobil\npilihan anda : ");
         int kendaraan = input.nextInt();
 
-        System.out.println("Silahkan masukkan jarak yang akan ditempuh (km): ");
+        System.out.print("Silahkan masukkan jarak yang akan ditempuh (km): ");
         double jarak = input.nextDouble();
 
         System.out.print(
