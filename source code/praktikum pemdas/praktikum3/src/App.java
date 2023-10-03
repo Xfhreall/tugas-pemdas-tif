@@ -66,32 +66,32 @@ public class App {
             System.out.printf("%-15s:%30s\n", "Denda", "Tidak ada denda");
         } else if (jamKerja >= 50 && jamKerja <= 60) {
             upah = jamKerja * 50000;
-            System.out.printf("%-15s%s%30s\n", "Upah", ":", df.format(upah));
-            System.out.printf("%-15s%s%30s\n", "Lembur", ":", "Tidak ada lembur");
-            System.out.printf("%-15s%s%30s\n", "Denda", ":", "Tidak ada denda");
+            System.out.printf("%-15s:%30s\n", "Upah", df.format(upah));
+            System.out.printf("%-15s:%30s\n", "Lembur", "Tidak ada lembur");
+            System.out.printf("%-15s:%30s\n", "Denda", "Tidak ada denda");
         } else if (jamKerja < 50) {
             upah = jamKerja * 50000;
             denda = (50 - jamKerja) * 10000;
-            System.out.printf("%-15s%s%30s\n", "Upah", ":", df.format(upah));
-            System.out.printf("%-15s%s%30s\n", "Lembur", ":", "Tidak ada lembur");
-            System.out.printf("%-15s%s%30s\n", "Denda", ":", df.format(denda));
+            System.out.printf("%-15s:%30s\n", "Upah", df.format(upah));
+            System.out.printf("%-15s:%30s\n", "Lembur", "Tidak ada lembur");
+            System.out.printf("%-15s:%30s\n", "Denda", df.format(denda));
         }
 
         System.out.println("-".repeat(47));
         int total = 0;
         if (jamKerja > 60) {
             total = upah + lembur;
-            System.out.printf("%-15s%s%30s\n", "Total", ":", df.format(total));
+            System.out.printf("%-15s:%30s\n", "Total", df.format(total));
         } else if (jamKerja >= 50 && jamKerja <= 60) {
             total = upah;
-            System.out.printf("%-15s%s%30s\n", "Total", ":", df.format(total));
+            System.out.printf("%-15s:%30s\n", "Total", df.format(total));
         } else if (jamKerja < 50) {
             if (upah > denda) {
                 total = upah - denda;
-                System.out.printf("%-15s%s%30s\n", "Total", ":", df.format(total));
+                System.out.printf("%-15s:%30s\n", "Total", df.format(total));
             } else {
                 total = denda - upah;
-                System.out.printf("%-15s%s%30s\n", "Total", ":", "Membayar " +
+                System.out.printf("%-15s:%30s\n", "Total", "Membayar " +
                         df.format(total));
             }
         }
