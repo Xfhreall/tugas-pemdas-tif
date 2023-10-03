@@ -10,7 +10,7 @@ public class App {
         // MENGHITUNG BMI
 
         double bmi;
-
+        System.out.println("BMI Calculator");
         System.out.print("Input your weight (kg) : ");
         double berat = input.nextDouble();
 
@@ -22,13 +22,13 @@ public class App {
         bmi = berat / ((double) tinggi * (double) tinggi);
 
         if (bmi > 30) {
-        System.out.printf("BMI = %.2f (Very Overweight)", bmi);
+            System.out.printf("BMI = %.2f (Very Overweight)", bmi);
         } else if (bmi > 25) {
-        System.out.printf("BMI = %.2f (Overweight)", bmi);
+            System.out.printf("BMI = %.2f (Overweight)", bmi);
         } else if (bmi > 18.5) {
-        System.out.printf("BMI = %.2f (Normal)", bmi);
+            System.out.printf("BMI = %.2f (Normal)", bmi);
         } else {
-        System.out.printf("BMI = %.2f (Underweight)", bmi);
+            System.out.printf("BMI = %.2f (Underweight)", bmi);
         }
 
         System.out.print("\n------------------------------");
@@ -61,10 +61,9 @@ public class App {
             upah = 3000000; // didapat dari nilai maksimal upah normal = 60*50rb.
             lembur = (jamKerja - 60) * 60000;
 
-            System.out.printf("%-15s%s%30s\n", "Upah", ":", df.format(upah));
-            System.out.printf("%-15s%s%30s\n", "Lembur", ":", df.format(lembur));
-            System.out.printf("%-15s%s%30s\n", "Denda", ":", "Tidak ada denda");
-
+            System.out.printf("%-15s:%30s\n", "Upah", df.format(upah));
+            System.out.printf("%-15s:%30s\n", "Lembur", df.format(lembur));
+            System.out.printf("%-15s:%30s\n", "Denda", "Tidak ada denda");
         } else if (jamKerja >= 50 && jamKerja <= 60) {
             upah = jamKerja * 50000;
             System.out.printf("%-15s%s%30s\n", "Upah", ":", df.format(upah));
@@ -89,13 +88,13 @@ public class App {
         } else if (jamKerja < 50) {
             if (upah > denda) {
                 total = upah - denda;
-                System.out.printf("%-15s%s%30s\n", "Total", ":",df.format(total));
+                System.out.printf("%-15s%s%30s\n", "Total", ":", df.format(total));
             } else {
                 total = denda - upah;
-                System.out.printf("%-15s%s%30s\n", "Total", ":", "Membayar " + df.format(total));
+                System.out.printf("%-15s%s%30s\n", "Total", ":", "Membayar " +
+                        df.format(total));
             }
         }
-
         input.close();
     }
 }
