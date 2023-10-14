@@ -2,7 +2,7 @@ import java.util.*;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 
-public class App {
+public class jastip {
     public static void main(String[] args) throws Exception {
         DecimalFormatSymbols symbols = new DecimalFormatSymbols();
         symbols.setGroupingSeparator('.');
