@@ -7,6 +7,7 @@ public class guntingbatu {
         String player1 = input.next();
         String play1 = input.next();
 
+
         String player2 = input.next();
         String play2 = input.next();
         if (play1 == play2) {
@@ -35,7 +36,7 @@ public class guntingbatu {
                     }
                     break;
                 default:
-                    System.out.println("Maen apa si bang?");
+                    System.out.println(player1 + " dan " + player2 + " seri");
                     break;
             }
         }
