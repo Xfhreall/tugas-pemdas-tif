@@ -5,54 +5,54 @@ public class soal {
         //soal 3
         Scanner input = new Scanner(System.in);
         int a = input.nextInt(), b = input.nextInt(), c = input.nextInt();
-        int bg, bk, cnt = 0;
-        String ot = "Habis dibagi ";
-        boolean cek = false;
+        int besar, kecil, bagi = 0;
+        String pembagi = "Habis dibagi ";
+        boolean hadiah = false;
         if (a > b && a > c) {
-            bg = a;
+            besar = a;
         } else if (b > a && b > c) {
-            bg = b;
+            besar = b;
         } else
-            bg = c;
+            besar = c;
 
         if (a < b && a < c) {
-            bk = a;
+            kecil = a;
         } else if (b < a && b < c) {
-            bk = b;
+            kecil = b;
         } else
-            bk = c;
-        int sel = bg - bk;
-        if (sel % 2 == 0 && sel % 3 == 0 && sel % 5 == 0 && sel % 7 == 0 && sel % 11 == 0) {
-            cek = true;
-        } else if (sel % 2 != 0 && sel % 3 != 0 && sel % 5 != 0 && sel % 7 != 0 && sel % 11 != 0) {
-            cek = false;
+            kecil = c;
+        int selisih = besar - kecil;
+        if (selisih % 2 == 0 && selisih % 3 == 0 && selisih % 5 == 0 && selisih % 7 == 0 && selisih % 11 == 0) {
+            hadiah = true;
+        } else if (selisih % 2 != 0 && selisih % 3 != 0 && selisih % 5 != 0 && selisih % 7 != 0 && selisih % 11 != 0) {
+            hadiah = false;
         } else {
-            if (sel % 2 == 0)
-                ot += "2 ";
-            cnt++;
-            if (sel % 3 == 0)
-                ot += "3 ";
-            cnt++;
-            if (sel % 5 == 0)
-                ot += "5 ";
-            cnt++;
-            if (sel % 7 == 0)
-                ot += "7 ";
-            cnt++;
-            if (sel % 11 == 0)
-                ot += "11 ";
-            cnt++;
+            if (selisih % 2 == 0)
+                pembagi += "2 ";
+            bagi++;
+            if (selisih % 3 == 0)
+                pembagi += "3 ";
+            bagi++;
+            if (selisih % 5 == 0)
+                pembagi += "5 ";
+            bagi++;
+            if (selisih % 7 == 0)
+                pembagi += "7 ";
+            bagi++;
+            if (selisih % 11 == 0)
+                pembagi += "11 ";
+            bagi++;
         }
-        System.out.println("Terbesar " + bg);
-        System.out.println("Terkecil " + bk);
-        System.out.println("Selisih " + bg + " - " + bk + " = " + sel);
-        if (cek) {
+        System.out.println("Terbesar " + besar);
+        System.out.println("Terkecil " + kecil);
+        System.out.println("Selisih " + besar + " - " + kecil + " = " + selisih);
+        if (hadiah) {
             System.out.println("Habis dibagi " + 2 + " " + 3 + " " + 5 + " " + 7 + " " + 11);
             System.out.println("Jackpot!!!");
-        } else if (cnt != 0) {
-            System.out.println(ot);
+        } else if (bagi != 0) {
+            System.out.println(pembagi);
             System.out.println("Belum hoki!");
-        } else if (!cek) {
+        } else if (!hadiah) {
             System.out.println("Tidak ada");
             System.out.println("Jackpot!!!");
 
