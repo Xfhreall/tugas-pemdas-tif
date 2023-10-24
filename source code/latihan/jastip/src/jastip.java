@@ -3,70 +3,30 @@ import java.util.*;
 public class jastip {
     public static void main(String[] args) throws Exception {
         Scanner input = new Scanner(System.in);
+        
+DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+symbols.setGroupingSeparator('.');
+symbols.setDecimalSeparator(',');
+DecimalFormat df = new DecimalFormat("Rp#,###.00", symbols);
 
-        long belanja = input.nextLong();
-        String member = input.next();
-        String tanggal = input.next();
-        double diskon = 0;
-        int h = 0, b = 0, t = 0;
-        String[] bagian = tanggal.split("/");
-        if (bagian.length == 3) {
-            h = Integer.parseInt(bagian[0]);
-            b = Integer.parseInt(bagian[1]);
-            t = Integer.parseInt(bagian[2]);
-        }
-        // operasi
-        if (member.equals("Regular")) {
-            if (h == b) {
-                diskon = 0.5;
-                belanja *= diskon;
-                System.out.printf("%s", belanja);
-            } else {
-                System.out.printf("%s", belanja);
-            }
-        }
-        if (member.equals("Gold")) {
-            if (belanja >= 50000) {
-                diskon = 0.9;
-                if (h == b) {
-                    belanja *= diskon;
-                    belanja *= 0.5;
-                    System.out.println(belanja);
-                } else {
-                    belanja *= diskon;
-                    System.out.println(belanja);
-                }
-            } else {
-                if (h == b) {
-                    belanja *= 0.5;
-                    System.out.println(belanja);
-                } else {
+int harga = input.nextInt();
+String jasa = input.next();
 
-                    System.out.println(belanja);
-                }
-            }
-        }
-        if (member.equals("Platinum")) {
-            if (belanja >= 50000) {
-                diskon = 0.8;
-                if (h == b) {
-                    belanja *= diskon;
-                    belanja *= 0.5;
-                    System.out.println(belanja);
-                } else {
-                    belanja *= diskon;
-                    System.out.println(belanja);
-                }
-            } else {
-                if (h == b) {
-                    belanja *= 0.5;
-                    System.out.println(belanja);
-                } else {
-                    System.out.println(belanja);
-                }
-            }
-        }
+if (jasa.equalsIgnoreCase("Kirim")) {
+double diskon = harga + ((double) harga * 0.1);
+
+System.out.printf("\nTotal harga belanja : %s\n", df.format(harga));
+System.out.printf("Status delivery : %s\n", "Diantarkan");
+System.out.printf("Total harga yang perlu dibayar : %s", df.format(diskon));
+} else if (jasa.equalsIgnoreCase("Ambil")) {
+System.out.printf("\nTotal harga belanja : %s\n", df.format(harga));
+System.out.printf("Status delivery : %s", "Diambil");
+} else {
+System.out.println("Yang bener ae");
+}
+
     }
+}
     // // soal 1
 
     // String s = input.next();
@@ -186,25 +146,68 @@ public class jastip {
     // }
     // System.out.println(hasil);
 
-}
 
-// DecimalFormatSymbols symbols = new DecimalFormatSymbols();
-// symbols.setGroupingSeparator('.');
-// symbols.setDecimalSeparator(',');
-// DecimalFormat df = new DecimalFormat("Rp#,###.00", symbols);
+        // long belanja = input.nextLong();
+        // String member = input.next();
+        // String tanggal = input.next();
+        // double diskon = 0;
+        // int h = 0, b = 0, t = 0;
+        // String[] bagian = tanggal.split("/");
+        // if (bagian.length == 3) {
+        //     h = Integer.parseInt(bagian[0]);
+        //     b = Integer.parseInt(bagian[1]);
+        //     t = Integer.parseInt(bagian[2]);
+        // }
+        // // operasi
+        // if (member.equals("Regular")) {
+        //     if (h == b) {
+        //         diskon = 0.5;
+        //         belanja *= diskon;
+        //         System.out.printf("%s", belanja);
+        //     } else {
+        //         System.out.printf("%s", belanja);
+        //     }
+        // }
+        // if (member.equals("Gold")) {
+        //     if (belanja >= 50000) {
+        //         diskon = 0.9;
+        //         if (h == b) {
+        //             belanja *= diskon;
+        //             belanja *= 0.5;
+        //             System.out.println(belanja);
+        //         } else {
+        //             belanja *= diskon;
+        //             System.out.println(belanja);
+        //         }
+        //     } else {
+        //         if (h == b) {
+        //             belanja *= 0.5;
+        //             System.out.println(belanja);
+        //         } else {
 
-// int harga = input.nextInt();
-// String jasa = input.next();
+        //             System.out.println(belanja);
+        //         }
+        //     }
+        // }
+        // if (member.equals("Platinum")) {
+        //     if (belanja >= 50000) {
+        //         diskon = 0.8;
+        //         if (h == b) {
+        //             belanja *= diskon;
+        //             belanja *= 0.5;
+        //             System.out.println(belanja);
+        //         } else {
+        //             belanja *= diskon;
+        //             System.out.println(belanja);
+        //         }
+        //     } else {
+        //         if (h == b) {
+        //             belanja *= 0.5;
+        //             System.out.println(belanja);
+        //         } else {
+        //             System.out.println(belanja);
+        //         }
+        //     }
+        // }
 
-// if (jasa.equalsIgnoreCase("Kirim")) {
-// double diskon = harga + ((double) harga * 0.1);
 
-// System.out.printf("\nTotal harga belanja : %s\n", df.format(harga));
-// System.out.printf("Status delivery : %s\n", "Diantarkan");
-// System.out.printf("Total harga yang perlu dibayar : %s", df.format(diskon));
-// } else if (jasa.equalsIgnoreCase("Ambil")) {
-// System.out.printf("\nTotal harga belanja : %s\n", df.format(harga));
-// System.out.printf("Status delivery : %s", "Diambil");
-// } else {
-// System.out.println("Yang bener ae lu");
-// }
