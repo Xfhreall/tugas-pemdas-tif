@@ -3,6 +3,7 @@ import java.util.*;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner input = new Scanner(System.in);
+        //soal aplikasi
         int control = 0, n = 0;
         double r = 0, l = 0, x = 0, total = 0;
         do {
@@ -38,6 +39,7 @@ public class App {
             }
         } while (control != 0);
 
+<<<<<<< HEAD
 
         //bilangan prima
         // int n2 = 0, i = 3;
@@ -49,5 +51,17 @@ public class App {
         //         System.out.print(i + " ");
         //     }
         // }
+=======
+        //soal prima
+        int n2 = 0, i = 3;
+        System.out.print("Masukkan n : ");
+        n2 = input.nextInt();
+        System.out.print(i + " ");
+        for (i = 3; i <= n2; i++) {
+            if (i % 2 != 0 && i % 3 != 0) {
+                System.out.print(i + " ");
+            }
+        }
+>>>>>>> 18e09bfa009b4af6ca8f4ab76923d5dfaea81aee
     }
 }
