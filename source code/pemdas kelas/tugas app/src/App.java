@@ -39,29 +39,21 @@ public class App {
             }
         } while (control != 0);
 
-<<<<<<< HEAD
-
-        //bilangan prima
-        // int n2 = 0, i = 3;
-        // System.out.print("Masukkan n : ");
-        // n2 = input.nextInt();
-        // System.out.print(i + " ");
-        // for (i = 3; i <= n2; i++) {
-        //     if (i % 2 != 0 && i % 3 != 0) {
-        //         System.out.print(i + " ");
-        //     }
-        // }
-=======
         //soal prima
-        int n2 = 0, i = 3;
+        int n2,i=0;
         System.out.print("Masukkan n : ");
         n2 = input.nextInt();
-        System.out.print(i + " ");
+        if(n >= 3 &&n<5){
+            System.out.print("3 ");
+        }else if(n<7){
+            System.out.print("3 5 ");
+        }else if (n>=7){
+            System.out.print("3 5 7 ");
+        }
         for (i = 3; i <= n2; i++) {
-            if (i % 2 != 0 && i % 3 != 0) {
+            if (i % 2 != 0 && i % 3 != 0 && i % 5 != 0 && i % 7 != 0) {
                 System.out.print(i + " ");
             }
         }
->>>>>>> 18e09bfa009b4af6ca8f4ab76923d5dfaea81aee
     }
 }
