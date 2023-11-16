@@ -24,6 +24,7 @@ public class App {
                     mc = !mc;
                     ic = !ic;
                     cek = !cek;
+                    System.out.println("=".repeat(35));
                     break;
                 case 2:
                     mcs = (cek) ? "OFF" : "ON";
@@ -31,10 +32,12 @@ public class App {
                     mc = !mc;
                     ic = !ic;
                     cek = !cek;
+                    System.out.println("=".repeat(35));
                     break;
                 case 3:
                     ins = (ins.equals("OFF")) ? "ON" : "OFF";
                     in = !in;
+                    System.out.println("=".repeat(35));
                     break;
                 case 4:
                     System.out.print("Masukkan text untuk diencode: ");
@@ -75,7 +78,7 @@ public class App {
                                         result += c;
                                     }
                                 }
-                            } else if (mc==false ) {
+                            } else if (mc == false) {
                                 c = Character.toLowerCase(c);
                                 if (x >= 0) {
                                     c += x;
@@ -99,18 +102,19 @@ public class App {
                                 result += c;
                         }
                     }
+                    out = "Hasil encode : " + result;
+                    System.out.printf("%s\n%s\n", out, "=".repeat(out.length()));
+                    result = "";
+                    break;
             }
-            out = "Hasil encode : " + result;
-            System.out.printf("%s\n%s\n", out, "=".repeat(out.length()));
-            result = "";
         } while (control != 9);
-        
+
         // soal fibonacci
         System.out.print("Masukkan n : ");
         int n = input.nextInt();
         int a = 0;
         int b = 1;
-        
+
         for (int i = 1; i <= n; i++) {
             System.out.print(a + " ");
             int c = a + b;

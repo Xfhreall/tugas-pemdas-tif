@@ -1,5 +1,14 @@
 package Ojek;
 
+/**
+
+ *
+ * @author 
+// * - Risqi Achmad Fahreal - 235150201111048
+// * - Alfi Muhammad Ghiffari - 235150200111048
+// * - Mochammad Attila Eka Raharjo - 2351502021111051
+ */
+
 import java.util.Scanner;
 
 public class App {
@@ -10,6 +19,7 @@ public class App {
             System.out.println("=".repeat(30));
             System.out.println("1. Naik Ojek");
             System.out.println("2. Kirim Barang");
+            System.out.println("3. Nama Driver");
             System.out.println("0.Keluar");
             System.out.print("Pilihan anda : ");
             control = input.nextInt();
@@ -163,7 +173,23 @@ public class App {
                     double berat = input.nextDouble();
                     System.out.printf("Biaya pengiriman : Rp%.0f\n", berat * 10000);
                     break;
+                case 3:
+                    String nama = "";
+                    System.out.print("Masukkan jumlah driver : ");
+                    int n = input.nextInt();
+                    input.nextLine();
+                    String[] driver = new String[n];
+                    for (int i = 0; i < n; i++) {
+                        System.out.print("Masukkan nama driver ke-" + i + 1 + " : ");
+                        nama = input.nextLine();
+                        driver[i] = nama;
+                    }
+                    for (int j = 0; j < driver.length; j++) {
+                        System.out.println("Driver " + (j + 1) + ": " + driver[j]);
+                    }
+                    break;
                 default:
+                    System.out.println("Pilihan anda tidak valid");
                     break;
             }
         } while (control != 0);
