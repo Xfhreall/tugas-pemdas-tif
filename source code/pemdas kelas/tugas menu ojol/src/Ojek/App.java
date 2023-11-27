@@ -223,7 +223,24 @@ public class App {
     /*
         work in progress(wip)
          static double jrk;
-    static Scanner sc = new Scanner (System.in);
+    static Scanner input = new Scanner (System.in);
+    static String jn, s;
+    public static boolean login(boolean cek) {
+        System.out.println();
+        System.out.println("============== Login Phase ==============");
+        System.out.print("Username : ");
+        String id = input.nextLine();
+        System.out.print("Sandi : ");
+        String pw = input.nextLine();
+        System.out.print("Pilih jenis akun Anda : ");
+        jn = input.nextLine();
+        if (id.equals("user123") && pw.equals("lolipop")) {
+            return true;
+        } else {
+            System.out.println(" -Username or password incorrect- ");
+            return false;
+        }
+    }
     static double count(double a, String s){
         double total = 0;
         if (s.equals("1")){
@@ -250,118 +267,106 @@ public class App {
         }else return total = count(a,s);
 
     }
-    static void ojk(String s){
+    static void ojk(){
         String a,b;
         do{
             System.out.println("");
-            System.out.println("Mw naik apa bwang?");
+            System.out.println("Pilih kendaraan Anda :");
             System.out.println("1. Mobil");
             System.out.println("2. Motor");
-            System.out.println("0. Balik :3");
-            System.out.println("Ayo pilih bwang, angka nya aja ya ;)");
-            a = sc.nextLine();
+            System.out.println("0. Kembali");
+            System.out.print("Pilihan Anda :");
+            a = input.nextLine();
             switch (a) {
                 case "1":
-                    System.out.println("masukkin jaraknya bwang!!");
-                    jrk = sc.nextDouble();
-                    jrk = count(jrk,a);
-                    System.out.println("Bwang, bayar segini bwang!!");
-                    System.out.println(jrk);
-                    System.out.println("Bayar pake apa ni bwang!!");
-                    System.out.println("1. Gopay (pake ini diskon 10% loh bwang)");
-                    System.out.println("2. OvO (pake ini diskon 5% bwang)");
-                    System.out.println("3. Cash (maap bwang, tak ada diskon tuk dikau)");
-                    System.out.println("Silahkan milih bwang");
-                    b = sc.nextLine();
-                    System.out.printf("%s, %s Rp.0%f, %s %s ya bwang\n ","Okeee, Jadi abangnya mesen mobil", "dengan harga", bayar(jrk,a,b), "dengan pembayaran menggunakan", b);
+                    System.out.println("Masukkan jarak tempuh Anda");
+                    jrk = input.nextDouble();
+                    System.out.println("Biaya yang akan Anda bayar");
+                    System.out.println(count(jrk,a));
+                    System.out.println("Pilih jenis pembayaran Anda");
+                    System.out.println("1. Gopay");
+                    System.out.println("2. OvO");
+                    System.out.println("3. Cash");
+                    System.out.print("Pilihan Anda : ");
+                    input.nextLine();
+                    b = input.nextLine();
+                    System.out.printf("%s, %s Rp.%.0f, %s %s ya bwang\n ","Okeee, Jadi abangnya mesen mobil", "dengan harga", bayar(jrk,a,b), "dengan pembayaran menggunakan", b);
                     System.out.println("");
+                    a = "0";
                     break;
                 case "2":
-                    System.out.println("masukkin jaraknya bwang!!");
-                    jrk = sc.nextDouble();
-                    jrk = count(jrk,a);
-                    System.out.println("Bwang, bayar segini bwang!!");
-                    System.out.println(jrk);
-                    System.out.println("Bayar pake apa ni bwang!!");
-                    System.out.println("1. Gopay (pake ini diskon 10% loh bwang)");
-                    System.out.println("2. OvO (pake ini diskon 5% bwang)");
-                    System.out.println("3. Cash (maap bwang, tak ada diskon tuk dikau)");
-                    System.out.println("Silahkan milih bwang");
-                    b = sc.nextLine();
-                    System.out.printf("%s, %s Rp.0%f, %s %s ya bwang\n ","Okeee, Jadi abangnya mesen motor", "dengan harga", bayar(jrk,a,b), "dengan pembayaran menggunakan", b);
+                    System.out.println("Masukkan jarak tempuh Anda");
+                    jrk = input.nextDouble();
+                    System.out.println("Biaya yang akan Anda bayar");
+                    System.out.println(count(jrk,a));
+                    System.out.println("Pilih jenis pembayaran Anda");
+                    System.out.println("1. Gopay");
+                    System.out.println("2. OvO");
+                    System.out.println("3. Cash");
+                    System.out.print("Pilihan Anda : ");
+                    input.nextLine();
+                    b = input.nextLine();
+                    System.out.printf("%s, %s Rp.%.0f, %s %s ya bwang\n ","Okeee, Jadi abangnya mesen mobil", "dengan harga", bayar(jrk,a,b), "dengan pembayaran menggunakan", b);
                     System.out.println("");
+                    a = "0";
                     break;
                 case "0":
                 break;
                 default:
-                    System.out.println("Woy bwang, pilihannya gag ada!!");
+                    System.out.println("Pilihan tidak tersedia");
                     break;
             }
         }while(!a.equals("0"));
     }
-    static void pkt(String s){
+    static void pkt(){
         double a = 0;
         s = "paket";
         System.out.println("");
-        System.out.println("Bwang, masukkin berat paketnya bwang");
-        a = sc.nextDouble();
-        System.out.println("Bwang, bayar bwang " + count(a,s));
+        System.out.println("Masukkan berat paket Anda");
+        a = input.nextDouble();
+        System.out.println("Biaya pengiriman" + count(a,s));
         System.out.println("");
     }
-    // static void gpd(String s){
-    //     do{
+    static void gpd(){
 
-    //     }while();
-    // }
-    static void member(){
-        String s,a;
-        do{
-            System.out.println("");
-            System.out.println("Alo, Apa yang bisa kamu bantu? :3");
-            System.out.println("1. Ngojek bang");
-            System.out.println("2. Paketttt");
-            System.out.println("3. Gopud");
-            System.out.println("0. Balik :3");
-            System.out.println("Pilihan Anda? ;)");
-             s = sc.nextLine();
-             switch (s) {
-                case "1":
-                    ojk(s);
-                    break;
-                case "2":
-                    pkt(s);
-                    break;
-                case "3":
-                    //gpd(s);
-                    break;
-                default:
-                    System.out.println("Yha pilihan cydak tercedia :'(");
-                    break;
-             }
-        }while(!s.equals("0"));
     }
-    // static void driver(){
-    //     do{
-    //         System.out.println("ALo, ada yang bisa kami bantu? :3");
-    //         System.out.println("1. Daftar bang?");
-    //         System.out.println("2. Lihat list (Cieee, nyari ciapa sich?)");
-    //     }while();
-    // }
-    public static void main(String[] args) throws IOException {
-        String s;
-        do{
-            System.out.println("Alo Celamat Datanh :3");
-            System.out.println("Siapa Anda ????");
-            System.out.println("1. User");
-            System.out.println("2. Driver");
-            System.out.println("0. Exit");
-            s = sc.nextLine();
-            if (s.equalsIgnoreCase("User")){
-                member();
-            }else if(s.equalsIgnoreCase("Driver")){
-                //driver();
-            }  
-        }while (!s.equalsIgnoreCase("Exit"));
+    public static void main(String[] args) throws Exception {
+        int control = 0;
+        boolean cek = false;
+        do {
+            if (login(cek == true) && jn.equalsIgnoreCase("User")) {
+                do {
+                    System.out.println();
+                    System.out.println("=".repeat(18) + " Apps " + "=".repeat(18));
+                    System.out.println("1. Naik Ojek");
+                    System.out.println("2. Kirim Barang");
+                    System.out.println("3. Pesen makanan");
+                    System.out.println("9. Log out");
+                    System.out.println("10. Shutdown");
+                    System.out.print("Pilihan anda : ");
+                    control = input.nextInt();
+                    switch (control) {
+                        case 1:
+                            ojk();
+                            break;
+                        case 2:
+                            pkt();
+                            break;
+                        case 3:
+                            gpd();
+                            break;
+                        case 9:
+                            login(cek == false);
+                            break;
+                        case 10:
+                            break;
+                        default:
+                            System.out.println("Pilihan anda tidak valid");
+                            break;
+                    }
+                } while (control != 10 && cek != false);
+            }
+        } while (control != 10);
     }
     */
 }
