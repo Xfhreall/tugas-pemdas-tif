@@ -13,7 +13,6 @@ import java.util.Scanner;
 
 public class App {
     public static boolean login(boolean cek) {
-        cek = false;
         Scanner input = new Scanner(System.in);
         System.out.println();
         System.out.println("============== Login Phase ==============");
@@ -22,10 +21,10 @@ public class App {
         System.out.print("Sandi : ");
         String pw = input.nextLine();
         if (id.equals("user123") && pw.equals("lolipop")) {
-            return cek = true;
+            return true;
         } else {
             System.out.println(" -Username or password incorrect- ");
-            return cek = false;
+            return false;
         }
     }
 
