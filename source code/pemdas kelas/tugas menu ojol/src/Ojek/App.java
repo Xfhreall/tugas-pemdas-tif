@@ -220,4 +220,131 @@ public class App {
             }
         } while (control != 10);
     }
+    /*
+        work in progress(wip)
+        static double jrk;
+    static Scanner sc = new Scanner (System.in);
+    static double count(double a, String s){
+        double total = 0;
+        if (s.equals("1")){
+            if (a > 10) total = a * 15000;
+            else if(a > 5) total = 65000;
+            else if (a > 2) total = 40000;
+            else total = 25000;
+        }else if (s.equals("2")){
+            if (a > 10) total = a * 8000;
+            else if (a > 5) total = 30000;
+            else if (a > 2) total = 20000;
+            else total = 15000;
+        }
+        return total;
+    }
+    static double bayar(double a, String s, String t){
+        double total = 0;
+        if(t.equalsIgnoreCase("Gopay")){
+           return  total = count(a,s) * 0.9;
+        }else if (t.equalsIgnoreCase("OvO")){
+            return total = count(a,s) * 0.95;
+        }else return total = count(a,s);
+
+    }
+    static void ojk(String s){
+        String a,b;
+        do{
+            System.out.println("Mw naik apa bwang?");
+            System.out.println("1. Mobil");
+            System.out.println("2. Motor");
+            System.out.println("0. Balik :3");
+            System.out.println("Ayo pilih bwang, angka nya aja ya ;)");
+            a = sc.nextLine();
+            switch (a) {
+                case "1":
+                    System.out.println("masukkin jaraknya bwang!!");
+                    jrk = sc.nextDouble();
+                    jrk = count(jrk,a);
+                    System.out.println("Bwang, bayar segini bwang!!");
+                    System.out.println(jrk);
+                    System.out.println("Bayar pake apa ni bwang!!");
+                    System.out.println("1. Gopay (pake ini diskon 10% loh bwang)");
+                    System.out.println("2. OvO (pake ini diskon 5% bwang)");
+                    System.out.println("3. Cash (maap bwang, tak ada diskon tuk dikau)");
+                    System.out.println("Silahkan milih bwang");
+                    b = sc.nextLine();
+                    System.out.printf("%s, %s Rp.0%f, %s %s ya bwang\n ","Okeee, Jadi abangnya mesen mobil", "dengan harga", bayar(jrk,a,b), "dengan pembayaran menggunakan", b);
+                    break;
+                case "2":
+                    System.out.println("masukkin jaraknya bwang!!");
+                    jrk = sc.nextDouble();
+                    jrk = count(jrk,a);
+                    System.out.println("Bwang, bayar segini bwang!!");
+                    System.out.println(jrk);
+                    System.out.println("Bayar pake apa ni bwang!!");
+                    System.out.println("1. Gopay (pake ini diskon 10% loh bwang)");
+                    System.out.println("2. OvO (pake ini diskon 5% bwang)");
+                    System.out.println("3. Cash (maap bwang, tak ada diskon tuk dikau)");
+                    System.out.println("Silahkan milih bwang");
+                    b = sc.nextLine();
+                    System.out.printf("%s, %s Rp.0%f, %s %s ya bwang\n ","Okeee, Jadi abangnya mesen motor", "dengan harga", bayar(jrk,a,b), "dengan pembayaran menggunakan", b);
+                    break;
+                default:
+                    System.out.println("Woy bwang, pilihannya gag ada!!");
+                    break;
+            }
+        }while(!a.equals("0"));
+    }
+    static void pkt(String s){
+
+    }
+    static void gpd(String s){
+        do{
+
+        }while();
+    }
+    static void member(){
+        String s,a;
+        do{
+            System.out.println("Alo, Apa yang bisa kamu bantu? :3");
+            System.out.println("1. Ngojek bang");
+            System.out.println("2. Paketttt");
+            System.out.println("3. Gopud");
+            System.out.println("0. Balik :3");
+            System.out.println("Pilihan Anda? ;)");
+             s = sc.nextLine();
+             switch (s) {
+                case "1":
+                    ojk(s);
+                    break;
+                case "2":
+                    pkt(s);
+                    break;
+                case "3":
+                    gpd(s);
+                    break;
+                default:
+                    System.out.println("Yha pilihan cydak tercedia :'(");
+                    break;
+             }
+        }while(!s.equals("0"));
+    }
+    static void driver(){
+        do{
+            System.out.println("ALo, ada yang bisa kami bantu? :3");
+            System.out.println("1. Daftar bang?");
+            System.out.println("2. Lihat list (Cieee, nyari ciapa sich?)");
+        }while();
+    }
+    public static void main(String[] args) throws IOException {
+        String s;
+        do{
+            System.out.println("Alo Celamat Datanh :3");
+            System.out.println("Siapa Anda ????");
+            s = sc.nextLine();
+            if (s.equalsIgnoreCase("member")){
+                member();
+            }else if(s.equalsIgnoreCase("Driver")){
+                driver();
+            }  
+        }while ();
+    }
+    */
 }
