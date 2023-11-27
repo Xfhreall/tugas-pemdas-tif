@@ -352,7 +352,32 @@ public class App {
     }
 
     static void gpd() {
-
+        Scanner input = new Scanner(System.in);
+        String[] restoran = {"Chinese Food", "Lalapan", "Japan Food"};
+        String[][] makanan = {{"Nasi Goreng", "Mie Goreng", "Capcay"},
+                              {"Ayam Bakar", "Bebek Goreng", "Ikan Bakar"}, 
+                              {"Ramen", "Udon", "Chicken Katsu"}};
+        int[][] harga = {{23000, 23000, 18000}, 
+                         {23000, 28000, 28000}, 
+                         {33000, 33000, 23000}};
+        System.out.printf("%s\n%", "1. Chinese Food");
+        System.out.println("Pilih Nomor Restoran : ");
+        int restaurant = input.nextInt();
+        if (restaurant>=1 && restaurant<=restoran.length) {
+            System.out.println("Pilih makanan yang ingin dibeli : ");
+            String inputmakan = input.next();
+            String[] inputmakanArray = inputmakan.split(",");
+            
+            int total = 0;
+            for (String mam : inputmakanArray) {
+                int nomorMakan = Integer.parseInt(mam);
+                total += harga[restaurant-1][nomorMakan-1];
+            }
+            System.out.println("Total harga yang harus dibayar : "+ total);
+            
+        } else {
+            System.out.println("Input tidak valid");        
+        }
     }
 
     public static void main(String[] args) throws Exception {
