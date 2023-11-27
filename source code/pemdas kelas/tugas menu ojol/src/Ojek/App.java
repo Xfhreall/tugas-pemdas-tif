@@ -13,6 +13,7 @@ import java.util.Scanner;
 
 public class App {
     public static boolean login(boolean cek) {
+        cek = false;
         Scanner input = new Scanner(System.in);
         System.out.println();
         System.out.println("============== Login Phase ==============");
@@ -21,17 +22,19 @@ public class App {
         System.out.print("Sandi : ");
         String pw = input.nextLine();
         if (id.equals("user123") && pw.equals("lolipop")) {
-            return true;
+            return cek = true;
         } else {
-            return false;
+            System.out.println(" -Username or password incorrect- ");
+            return cek = false;
         }
     }
 
     public static void main(String[] args) throws Exception {
         int control = 0;
+        boolean cek = false;
         do {
             Scanner input = new Scanner(System.in);
-            if (login(true)) {
+            if (login(cek == true)) {
                 do {
                     System.out.println();
                     System.out.println("=".repeat(18) + " Apps " + "=".repeat(18));
@@ -206,7 +209,7 @@ public class App {
                             }
                             break;
                         case 9:
-                            login(true);
+                            login(cek == false);
                             break;
                         case 10:
                             break;
@@ -214,9 +217,7 @@ public class App {
                             System.out.println("Pilihan anda tidak valid");
                             break;
                     }
-                } while (control != 10);
-            } else {
-                System.out.println(" -Username or password incorrect-");
+                } while (control != 10 && cek != false);
             }
         } while (control != 10);
     }
