@@ -360,7 +360,14 @@ public class App {
         int[][] harga = {{23000, 23000, 18000}, 
                          {23000, 28000, 28000}, 
                          {33000, 33000, 23000}};
-        System.out.printf("%s\n%", "1. Chinese Food");
+        System.out.println("Daftar Pilihan Restaurant :");
+        for (int i = 0; i < makanan.length; i++) {
+            System.out.println((i+1) + ". " + "Restaurant " + restoran[i] + " :");
+            for (int j = 0; j < makanan[i].length; j++) {
+                System.out.println((j+1) + ". " + makanan[i][j] + " - Rp " + harga[i][j]);
+            }
+            System.out.println();
+        }
         System.out.println("Pilih Nomor Restoran : ");
         int restaurant = input.nextInt();
         if (restaurant>=1 && restaurant<=restoran.length) {
