@@ -232,6 +232,7 @@ public class App {
     static String s;
     static int jn;
     static ArrayList<String> userId = new ArrayList<String>();
+    
     public static boolean login(boolean cek) {
         Scanner input = new Scanner(System.in);
         System.out.println();
