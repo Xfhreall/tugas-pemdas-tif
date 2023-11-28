@@ -229,7 +229,8 @@ public class App {
     // work in progress(wip)
     static double jrk;
     static Scanner input = new Scanner(System.in);
-    static String jn, s;
+    static String s;
+    static int jn;
 
     public static boolean login(boolean cek) {
         Scanner input = new Scanner(System.in);
@@ -239,8 +240,11 @@ public class App {
         String id = input.nextLine();
         System.out.print("Sandi : ");
         String pw = input.nextLine();
-        System.out.print("Pilih jenis akun Anda : ");
-        jn = input.nextLine();
+        System.out.println("Pilih jenis akun Anda : ");
+        System.out.println("1. Driver");
+        System.out.println("2. User");
+        System.out.print("Pilihan anda : ");
+        jn = input.nextInt();
         if (id.equals("user123") && pw.equals("lolipop")) {
             return true;
         } else {
@@ -277,9 +281,9 @@ public class App {
 
     static double bayar(double a, String s, String t) {
         double total = 0;
-        if (t.equalsIgnoreCase("Gopay")) {
+        if (t.equalsIgnoreCase("Gopay") || t.equalsIgnoreCase("1")) {
             return total = count(a, s) * 0.9;
-        } else if (t.equalsIgnoreCase("OvO")) {
+        } else if (t.equalsIgnoreCase("OvO") || t.equalsIgnoreCase("2")) {
             return total = count(a, s) * 0.95;
         } else
             return total = count(a, s);
@@ -353,37 +357,37 @@ public class App {
 
     static void gpd() {
         Scanner input = new Scanner(System.in);
-        String[] restoran = {"Chinese Food", "Lalapan", "Japan Food"};
-        String[][] makanan = {{"Nasi Goreng", "Mie Goreng", "Capcay"},
-                              {"Ayam Bakar", "Bebek Goreng", "Ikan Bakar"}, 
-                              {"Ramen", "Udon", "Chicken Katsu"}};
-        int[][] harga = {{23000, 23000, 18000}, 
-                         {23000, 28000, 28000}, 
-                         {33000, 33000, 23000}};
+        String[] restoran = { "Chinese Food", "Lalapan", "Japan Food" };
+        String[][] makanan = { { "Nasi Goreng", "Mie Goreng", "Capcay" },
+                { "Ayam Bakar", "Bebek Goreng", "Ikan Bakar" },
+                { "Ramen", "Udon", "Chicken Katsu" } };
+        int[][] harga = { { 23000, 23000, 18000 },
+                { 23000, 28000, 28000 },
+                { 33000, 33000, 23000 } };
         System.out.println("Daftar Pilihan Restaurant :");
         for (int i = 0; i < makanan.length; i++) {
-            System.out.println((i+1) + ". " + "Restaurant " + restoran[i] + " :");
+            System.out.println((i + 1) + ". " + "Restaurant " + restoran[i] + " :");
             for (int j = 0; j < makanan[i].length; j++) {
-                System.out.println((j+1) + ". " + makanan[i][j] + " - Rp " + harga[i][j]);
+                System.out.println((j + 1) + ". " + makanan[i][j] + " - Rp " + harga[i][j]);
             }
             System.out.println();
         }
         System.out.println("Pilih Nomor Restoran : ");
         int restaurant = input.nextInt();
-        if (restaurant>=1 && restaurant<=restoran.length) {
+        if (restaurant >= 1 && restaurant <= restoran.length) {
             System.out.println("Pilih makanan yang ingin dibeli : ");
             String inputmakan = input.next();
             String[] inputmakanArray = inputmakan.split(",");
-            
+
             int total = 0;
             for (String mam : inputmakanArray) {
                 int nomorMakan = Integer.parseInt(mam);
-                total += harga[restaurant-1][nomorMakan-1];
+                total += harga[restaurant - 1][nomorMakan - 1];
             }
-            System.out.println("Total harga yang harus dibayar : "+ total);
-            
+            System.out.println("Total harga yang harus dibayar : " + total);
+
         } else {
-            System.out.println("Input tidak valid");        
+            System.out.println("Input tidak valid");
         }
     }
 
@@ -391,7 +395,7 @@ public class App {
         int control = 0;
         boolean cek = false;
         do {
-            if (login(cek == true) && jn.equalsIgnoreCase("User")) {
+            if (login(cek == true) && jn == 2) {
                 do {
                     System.out.println();
                     System.out.println("=".repeat(18) + " Apps " + "=".repeat(18));
