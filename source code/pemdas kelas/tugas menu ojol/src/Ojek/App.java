@@ -327,7 +327,7 @@ public class App {
                     System.out.print("Pilihan Anda : ");
                     input.nextLine();
                     b = input.nextLine();
-                    System.out.printf("%s, %s Rp.%.0f, %s %s ya bwang\n ", "Okeee, Jadi abangnya mesen mobil",
+                    System.out.printf("%s, %s Rp.%.0f, %s %s ya bwang\n ", "Okeee, Jadi abangnya mesen motor",
                             "dengan harga", bayar(jrk, a, b), "dengan pembayaran menggunakan", b);
                     System.out.println("");
                     a = "0";
