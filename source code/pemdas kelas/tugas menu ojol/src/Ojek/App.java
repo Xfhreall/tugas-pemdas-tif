@@ -240,14 +240,15 @@ public class App {
         String id = input.nextLine();
         System.out.print("Sandi : ");
         String pw = input.nextLine();
-        System.out.println("Pilih jenis akun Anda : ");
-        System.out.println("1. Driver");
-        System.out.println("2. User");
-        System.out.print("Pilihan anda : ");
-        jn = input.nextInt();
         if (id.equals("user123") && pw.equals("lolipop")) {
+            System.out.println("Pilih jenis akun Anda : ");
+            System.out.println("1. Driver");
+            System.out.println("2. User");
+            System.out.print("Pilihan anda : ");
+            jn = input.nextInt();
             return true;
         } else {
+            System.out.println();
             System.out.println(" -Username or password incorrect- ");
             return false;
         }
