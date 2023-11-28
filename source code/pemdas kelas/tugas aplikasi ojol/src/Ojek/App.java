@@ -393,9 +393,6 @@ public class App {
         }
     }
 
-    static void regist() {
-        return;
-    }
 
     public static void main(String[] args) {
         int control = 0;
@@ -424,9 +421,6 @@ public class App {
                         case 3:
                             gpd();
                             cek = true;
-                            break;
-                        case 8:
-                            regist();
                             break;
                         case 9:
                             login(cek == false);
