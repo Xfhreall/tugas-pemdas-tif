@@ -231,7 +231,7 @@ public class App {
     static Scanner input = new Scanner(System.in);
     static String s;
     static int jn;
-
+    static ArrayList<String> userId = new ArrayList<String>();
     public static boolean login(boolean cek) {
         Scanner input = new Scanner(System.in);
         System.out.println();
@@ -240,7 +240,7 @@ public class App {
         String id = input.nextLine();
         System.out.print("Sandi : ");
         String pw = input.nextLine();
-        if (id.equals("user123") && pw.equals("lolipop")) {
+        if (id.equals("1") && pw.equals("1")) {
             System.out.println("Pilih jenis akun Anda : ");
             System.out.println("1. Driver");
             System.out.println("2. User");
@@ -349,11 +349,14 @@ public class App {
     static void pkt() {
         double a = 0;
         s = "paket";
-        System.out.println("");
-        System.out.print("Masukkan berat paket Anda : ");
+        System.out.print("Masukkan berat paket Anda (ketik 0 untuk kembali): ");
         a = input.nextDouble();
-        System.out.println("Biaya pengiriman" + count(a, s));
-        System.out.println("");
+        if (a > 0) {
+            System.out.printf("Biaya pengiriman Rp.%.0f", count(a, s));
+            System.out.println("");
+        } else {
+            return;
+        }
     }
 
     static void gpd() {
@@ -373,23 +376,30 @@ public class App {
             }
             System.out.println();
         }
-        System.out.println("Pilih Nomor Restoran : ");
+        System.out.print("Pilih Nomor Restoran (ketik 0 untuk kembali): ");
         int restaurant = input.nextInt();
-        if (restaurant >= 1 && restaurant <= restoran.length) {
-            System.out.println("Pilih makanan yang ingin dibeli : ");
-            String inputmakan = input.next();
-            String[] inputmakanArray = inputmakan.split(",");
+        if (restaurant > 0) {
+            if (restaurant >= 1 && restaurant <= restoran.length) {
+                System.out.print("Pilih makanan yang ingin dibeli : ");
+                String inputmakan = input.next();
+                String[] inputmakanArray = inputmakan.split(",");
 
-            int total = 0;
-            for (String mam : inputmakanArray) {
-                int nomorMakan = Integer.parseInt(mam);
-                total += harga[restaurant - 1][nomorMakan - 1];
+                int total = 0;
+                for (String mam : inputmakanArray) {
+                    int nomorMakan = Integer.parseInt(mam);
+                    total += harga[restaurant - 1][nomorMakan - 1];
+                }
+                System.out.println("Total harga yang harus dibayar : " + total);
+
+            } else {
+                System.out.println("Input tidak valid");
             }
-            System.out.println("Total harga yang harus dibayar : " + total);
-
         } else {
-            System.out.println("Input tidak valid");
+            return;
         }
+    }
+    static void regist(){
+        return;
     }
 
     public static void main(String[] args) throws Exception {
@@ -404,31 +414,37 @@ public class App {
                     System.out.println("2. Kirim Barang");
                     System.out.println("3. Pesen makanan");
                     System.out.println("9. Log out");
-                    System.out.println("10. Shutdown");
+                    System.out.println("0. Shutdown");
                     System.out.print("Pilihan anda : ");
                     control = input.nextInt();
                     switch (control) {
                         case 1:
                             ojk();
+                            cek = true;
                             break;
                         case 2:
                             pkt();
+                            cek = true;
                             break;
                         case 3:
                             gpd();
+                            cek = true;
+                            break;
+                        case 8:
+                            regist();
                             break;
                         case 9:
                             login(cek == false);
                             break;
-                        case 10:
+                        case 0:
                             break;
                         default:
                             System.out.println("Pilihan anda tidak valid");
                             break;
                     }
-                } while (control != 10 && cek != false);
+                } while (control != 0 && cek != false);
             }
-        } while (control != 10);
+        } while (control != 0);
         input.nextLine();
     }
 }
