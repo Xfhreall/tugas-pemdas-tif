@@ -230,9 +230,7 @@ public class App {
     static double jrk;
     static Scanner input = new Scanner(System.in);
     static String s;
-    static int jn;
-    static ArrayList<String> userId = new ArrayList<String>();
-    
+
     public static boolean login(boolean cek) {
         Scanner input = new Scanner(System.in);
         System.out.println();
@@ -242,11 +240,6 @@ public class App {
         System.out.print("Sandi : ");
         String pw = input.nextLine();
         if (id.equals("1") && pw.equals("1")) {
-            System.out.println("Pilih jenis akun Anda : ");
-            System.out.println("1. Driver");
-            System.out.println("2. User");
-            System.out.print("Pilihan anda : ");
-            jn = input.nextInt();
             return true;
         } else {
             System.out.println();
@@ -399,15 +392,16 @@ public class App {
             return;
         }
     }
-    static void regist(){
+
+    static void regist() {
         return;
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         int control = 0;
         boolean cek = false;
         do {
-            if (login(cek == true) && jn == 2) {
+            if (login(cek == true)) {
                 do {
                     System.out.println();
                     System.out.println("=".repeat(18) + " Apps " + "=".repeat(18));
