@@ -393,6 +393,70 @@ public class App {
         }
     }
 
+    static void blj() {
+        Scanner input = new Scanner(System.in);
+        String buy = "";
+        String[] menu = { "Sayur", "Buah", "Nasi", "Minum", "Alat dapur", "Alat rumah tangga" };
+        for (int i = 0; i < menu.length; i++) {
+            System.out.println((i + 1) + ". " + menu[i]);
+        }
+        System.out.println("0. Exit");
+        System.out.print("Mau belanja apa ? ");
+        int belanja = input.nextInt();
+        int harga = 0;
+        if (belanja == 0) {
+            return;
+        } else {
+            do {
+                if (belanja == 1) {
+                    buy += "Sayur" + " ".repeat(26) + "8000" + "\n";
+                    harga += 8000;
+                }
+                if (belanja == 2) {
+                    buy += "Buah" + " ".repeat(27) + "7000" + "\n";
+                    harga += 7000;
+                } else if (belanja == 3) {
+                    buy += "Nasi" + " ".repeat(27) + "4000" + "\n";
+                    harga += 4000;
+                } else if (belanja == 4) {
+                    buy += "Minum" + " ".repeat(26) + "5000" + "\n";
+                    harga += 5000;
+                } else if (belanja == 5) {
+                    buy += "Alat dapur" + " ".repeat(21) + "25000" + "\n";
+                    harga += 25000;
+                } else if (belanja == 6) {
+                    buy += "Alat rumah tangga" + " ".repeat(14) + "30000" + "\n";
+                    harga += 30000;
+                }
+                System.out.println();
+                System.out.println("================ NOTA BELANJA ================");
+                System.out.printf("%-30s %s\n", "Barang", "Harga");
+                System.out.println();
+                System.out.printf("%-30s\n", buy);
+                System.out.println();
+                for (int i = 0; i < menu.length; i++) {
+                    System.out.println((i + 1) + ". " + menu[i]);
+                }
+                System.out.println("0. Done");
+                System.out.print("Mau belanja apa lagi? ");
+                belanja = input.nextInt();
+            } while (belanja != 0);
+            System.out.printf("\n================ NOTA BELANJA ================\n");
+            System.out.printf("%-30s %s\n", "Barang", "Harga");
+            System.out.println();
+            System.out.printf("%-30s\n", buy);
+            System.out.println("=".repeat(46));
+            System.out.printf("%-31s%d", "Total ", harga);
+            System.out.printf("\n================ TERIMA KASIH ================\n");
+            buy = "";
+        }
+    }
+
+    public static int fibonaci(int n) {
+        if (n == 0 || n == 1)
+            return 1;
+        return fibonaci(n - 1) + fibonaci(n - 2);
+    }
 
     public static void main(String[] args) {
         int control = 0;
@@ -405,6 +469,8 @@ public class App {
                     System.out.println("1. Naik Ojek");
                     System.out.println("2. Kirim Barang");
                     System.out.println("3. Pesen makanan");
+                    System.out.println("4. Belanja");
+                    System.out.println("5. Fibonacci");
                     System.out.println("9. Log out");
                     System.out.println("0. Shutdown");
                     System.out.print("Pilihan anda : ");
@@ -421,6 +487,20 @@ public class App {
                         case 3:
                             gpd();
                             cek = true;
+                            break;
+                        case 4:
+                            blj();
+                            cek = true;
+                            break;
+                        case 5:
+                            Scanner input = new Scanner(System.in);
+                            System.out.print("Masukkan input : ");
+                            int n = input.nextInt();
+                            int[] result = new int[n];
+                            for (int i = 2; i < n; i++) {
+                                result[i] = result[i - 1] + result[i - 2];
+                            }
+                            System.out.println(fibonaci(n));
                             break;
                         case 9:
                             login(cek == false);
